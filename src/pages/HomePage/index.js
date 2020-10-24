@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SearchBar from '../../components/SearchBar';
+import Title from '../../components/Title';
 import Business from '../../classes/Business';
 
 import './index.css';
@@ -28,7 +29,12 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className='HomePage'>
-        <SearchBar value={this.state.searchValue} sendValue={this.sendSearchValue} />
+        <Title title='Welcome to COVID Info!' visible={this.state.searchValue.length < 1} />
+        <SearchBar
+          value={this.state.searchValue}
+          sendValue={this.sendSearchValue}
+          placeholder="Type in here to search for a business's COVID information"
+        />
         <div className='HomePageResultsList'>
           {this.getSearches()}
         </div>

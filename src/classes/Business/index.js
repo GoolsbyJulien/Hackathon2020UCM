@@ -16,10 +16,11 @@ class Business {
     this.logo = logo;
   }
 
-  // changePage = (e) => {
-  //   e.preventDefault();
-  //   history.push(`/${this.id}/view`);
-  // }
+  changePage = (e) => {
+    e.preventDefault();
+    const path = `/${this.id}/view`;
+    history.push(path);
+  }
 
   getSearchResult = () => {
     return (
