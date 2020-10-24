@@ -17,7 +17,7 @@ class BusinessDetailsTab extends React.Component {
   render() {
     return (
         <div className={`BusinessDetailsTabs`}>
-          {this.props.currTab === this.tabName ? this.setDisplay() : null}
+          {this.setDisplay()}
         </div>
     );
   }
