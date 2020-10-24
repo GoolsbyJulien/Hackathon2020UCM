@@ -1,7 +1,7 @@
 .SearchResult {
   width: 75%;
   border-radius: 10px;
-  background-color: rgb(104, 104, 104);
+  background-color: rgb(58, 204, 172);
   color: rgb(238, 230, 230);
   font-size: 1.4rem;
   margin-top: 1rem;
@@ -13,7 +13,7 @@
 
 .SearchResult:hover {
   cursor: pointer;
-  background-color: rgb(110, 110, 110);
+  background-color: rgb(80, 224, 169);
 }
 
 .SearchResult > * {
@@ -30,4 +30,15 @@
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 8px;
+}
+
+.BusinessDetailsTabHomeFirstRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(247, 244, 244);
+}
+
+.BusinessDetailsTabHomeName {
+  font-size: 3rem;
 }

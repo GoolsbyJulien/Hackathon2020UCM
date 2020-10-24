@@ -30,6 +30,27 @@ class Business {
       </div>
     );
   }
+
+  getHomeTab = () => {
+    return (
+      <div className={'BusinessDetailsTabHome'}>
+        <div className='BusinessDetailsTabHomeFirstRow'>
+          <div className='BusinessDetailsTabHomeLogo'>{this.logo}</div>
+          <div className='BusinessDetailsTabHomeName'>{this.name}</div>
+          <div className='BusinessDetailsTabHomeBookmark'>Bookmark</div>
+        </div>
+        {/* add more once we're reaching from the database */}
+      </div>
+    );
+  }
+
+  getPicturesTab = () => {
+    return (
+      <div className='BusinessDetailsTabPicture'>
+        This is currently a test
+      </div>
+    )
+  }
 }
 
 export default Business;
