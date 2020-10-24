@@ -7,11 +7,8 @@ import LoginPage from "./pages/LoginPage"
 import BusinessDetailsPage from './pages/BusinessDetailsPage';
 import Header from './components/Header';
 import history from './history';
-<<<<<<< HEAD
 import AboutUSPage from './pages/AboutUSPage';
-=======
 import SignupPage from './pages/SignupPage';
->>>>>>> development
 
 class App extends React.Component {
   render() {
@@ -21,12 +18,9 @@ class App extends React.Component {
           <Header />
           <Route path='/' component={HomePage} exact />
           <Route path='/login' component={LoginPage} exact />
-<<<<<<< HEAD
           <Route path='/aboutUS' component={AboutUSPage} exact />
 
-=======
           <Route path='/signup' component={SignupPage} exact />
->>>>>>> development
           <Route path='/:id/view' component={BusinessDetailsPage} exact />
         </Router>
       </div>
