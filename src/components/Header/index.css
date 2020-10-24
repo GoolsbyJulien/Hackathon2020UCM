@@ -1,0 +1,7 @@
+.Header {
+  display: flex;
+  height: 10vh;
+  align-items: stretch;
+  background-color: rgb(35, 28, 37);
+  color: rgb(236, 230, 238);
+}
