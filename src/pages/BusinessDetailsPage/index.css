@@ -20,7 +20,7 @@
 .BusinessDetailsPageTabButtonsSpace {
   flex-grow: 1;
   background-color: rgb(58, 204, 172);
-  border-width: 1px 1px 0 0;
+  border-width: 2px 2px 0 0;
   border-color: rgb(140, 247, 188);
   border-style: solid;
 }
@@ -33,7 +33,7 @@
   color: rgb(247, 240, 240);
   padding: 0 1% 0 1%;
   font-size: 1.4rem;
-  border-width: 1px 0 0 0;
+  border-width: 2px 0 0 0;
   border-color: rgb(140, 247, 188);
   border-style: solid;
 }

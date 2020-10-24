@@ -43,6 +43,14 @@ class Business {
       </div>
     );
   }
+
+  getPicturesTab = () => {
+    return (
+      <div className='BusinessDetailsTabPicture'>
+        This is currently a test
+      </div>
+    )
+  }
 }
 
 export default Business;
