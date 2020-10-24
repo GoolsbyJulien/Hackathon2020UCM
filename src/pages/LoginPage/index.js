@@ -39,7 +39,7 @@ class LoginPage extends React.Component {
       <div className='loginPage'>
         <SearchBar value={this.state.username} sendValue={this.updateUsername} placeholder='Username'/> 
         <SearchBar value={this.state.password} sendValue={this.updatePassword} placeholder='Password' /> 
-        <button className ="loginButton" onClick={this.login}>Submit</button>
+        <button className ="loginButton" onClick={this.login}>Login</button>
       </div>
     );
   }
