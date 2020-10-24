@@ -31,3 +31,14 @@
   height: 4.5rem;
   border-radius: 8px;
 }
+
+.BusinessDetailsTabHomeFirstRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(247, 244, 244);
+}
+
+.BusinessDetailsTabHomeName {
+  font-size: 3rem;
+}
