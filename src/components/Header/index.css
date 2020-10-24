@@ -2,7 +2,6 @@
   display: flex;
   height: 10vh;
   align-items: stretch;
-  background-color: rgb(35, 28, 37);
-  color: rgb(236, 230, 238);
+  color: rgb(233, 229, 229);
   font-size: 1rem;
 }
