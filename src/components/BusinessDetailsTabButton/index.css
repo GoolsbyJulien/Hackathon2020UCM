@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(58, 204, 172);
+  border-width: 1px 1px 0 0;
+  border-color: rgb(140, 247, 188);
+  border-style: solid;
 }
 
 .BusinessDetailsTabButtonImg {
