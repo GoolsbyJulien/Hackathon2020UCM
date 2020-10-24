@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage"
 import BusinessDetailsPage from './pages/BusinessDetailsPage';
 import Header from './components/Header';
 import history from './history';
+import AboutUSPage from './pages/AboutUSPage';
 
 class App extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class App extends React.Component {
           <Header />
           <Route path='/' component={HomePage} exact />
           <Route path='/login' component={LoginPage} exact />
+          <Route path='/aboutUS' component={AboutUSPage} exact />
 
           <Route path='/:id/view' component={BusinessDetailsPage} exact />
         </Router>
