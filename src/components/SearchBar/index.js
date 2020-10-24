@@ -6,6 +6,7 @@ import './index.css';
  * Props:
  * value: holds the value of the search bar
  * sendValue: sends the value to the parent
+ * placeholder: sets placeholder attribute of text input
  */
 class SearchBar extends React.Component {
   onChange = (e) => {
@@ -16,7 +17,13 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className='SearchBar'>
-        <input type='text' className='SearchBarInput' value={this.props.value} onChange={this.onChange} />
+        <input
+          type='text'
+          className='SearchBarInput'
+          value={this.props.value}
+          onChange={this.onChange}
+          placeholder={this.props.placeholder || ''}
+        />
       </div>
     );
   }
