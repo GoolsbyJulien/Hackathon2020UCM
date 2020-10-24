@@ -1,0 +1,12 @@
+.HomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.HomePageResultsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}

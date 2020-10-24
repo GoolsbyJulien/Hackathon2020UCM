@@ -1,0 +1,33 @@
+.SearchResult {
+  width: 75%;
+  border-radius: 10px;
+  background-color: rgb(104, 104, 104);
+  color: rgb(238, 230, 230);
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  display: flex;
+  padding: 0 5px 5px 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.SearchResult:hover {
+  cursor: pointer;
+  background-color: rgb(110, 110, 110);
+}
+
+.SearchResult > * {
+  margin-top: 5px;
+}
+
+.SearchResultLogo {
+  margin-right: 5%;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.SearchResultLogoImg {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 8px;
+}
