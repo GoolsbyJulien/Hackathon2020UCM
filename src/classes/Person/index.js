@@ -1,5 +1,5 @@
 
-import defaultLogo from '../../images/defaultlogo.png';
+import julienPicture from '../../images/julien.JPG';
 
 import React from 'react';
 
@@ -9,15 +9,14 @@ import history from '../../history';
 import './index.css';
 
 class Person {
-  constructor(name, aboutMe) {
+  constructor(name, aboutMe, picture) {
     this.aboutMe = aboutMe;
     this.name = name;
-    this.logo = <img className='SearchResultLogoImg' src={defaultLogo} alt='Logo' />;
+    this.picture = picture;
+
+    
   }
 
-  setLogo = (logo) => {
-    this.logo = logo;
-  }
 
   
 
@@ -25,10 +24,12 @@ class Person {
 
     return (
       <div class="aboutUsCard">    
-      <img className="personImage" src={defaultLogos}>
+      <img className="personImage" src={this.picture}>
       
        </img>
           <h1 className = "name"> {this.name} </h1>
+
+    <p className="aboutme"> {this.aboutMe}</p>
       </div>
     );
   }
