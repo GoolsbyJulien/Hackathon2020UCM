@@ -7,6 +7,7 @@ import './index.css';
  * value: holds the value of the search bar
  * sendValue: sends the value to the parent
  * placeholder: sets placeholder attribute of text input
+ * isPassword: whether the input is a password or not; defaults to false
  */
 class SearchBar extends React.Component {
   onChange = (e) => {
@@ -16,9 +17,9 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className='SearchBar'>
+      <div className={`SearchBar SearchBar${this.props.placeholder.replace(' ', '')}`}>
         <input
-          type='text'
+          type={this.props.isPassword ? 'password' : 'text'}
           className='SearchBarInput'
           value={this.props.value}
           onChange={this.onChange}
