@@ -3,23 +3,11 @@
     margin-top: 5rem;
     font-size: 2rem;
     color: rgb(247, 247, 247);
-<<<<<<< HEAD
-   
-=======
->>>>>>> development
 }
 
 .loginPage{
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    align-items: stretch;}
-.loginButton{
-    margin: 1rem;
-    font-size: 1.4rem;
-    align-self: center;
-}
-=======
     align-items: stretch;
     animation-name: fadeIn;
     animation-duration: 2s;
@@ -27,4 +15,3 @@
 .loginButton {
     margin-top: 4rem;
 }
->>>>>>> development
