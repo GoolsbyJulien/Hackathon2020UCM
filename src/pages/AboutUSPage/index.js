@@ -8,6 +8,9 @@ import './index.css';
 import Person from '../../classes/Person';
 import boPicture from '../../images/bo.JPG';
 
+import jaredPicture from '../../images/jared.png'
+
+
 import julienPicture from '../../images/julien.JPG';
 class AboutUSPage extends React.Component {
   constructor(props) {
@@ -17,7 +20,8 @@ class AboutUSPage extends React.Component {
   build = () => {
     // do stuff based off searchValue
     const results = [new Person('Julien Goolsby', 'I am a freshman studying Computer Science. During high school I was an intern at Cerner through the north land caps program  ', julienPicture), 
-    new Person('Bo Varvil', 'Walmart', boPicture)];
+    new Person('Bo Varvil', 'Walmart', boPicture),
+    new Person('Jared C', 'Walmart', jaredPicture)];
     return results.map(person => person.build());
   }
 
