@@ -10,7 +10,7 @@ import history from './history';
 import AboutUSPage from './pages/AboutUSPage';
 import SignupPage from './pages/SignupPage';
 import BusinessSignUpPage from './pages/BusinessSignUpPage';
-import HelpPage from './pages/HelpWPage';
+import HelpPage from './pages/HelpPage';
 
 class App extends React.Component {
   constructor(props) {
