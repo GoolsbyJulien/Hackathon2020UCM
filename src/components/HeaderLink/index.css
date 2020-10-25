@@ -18,8 +18,11 @@
   margin-right: auto;
 }
 
+.logoImage:hover{
+opacity: 79%; 
+}
+
 .logoImage{
-  width: 10rem;
-  height: 10rem;
-  margin-top: 2rem;
+  width: 7rem;
+  height: 7rem;
 }
