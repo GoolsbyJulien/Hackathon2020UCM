@@ -7,7 +7,7 @@
   animation-duration: 2s;
 }
 
-.SearchBarUsername, .SearchBarPassword, .SearchBarConfirmPassword {
+.SearchBarEmail, .SearchBarPassword, .SearchBarConfirmPassword {
   margin-top: 2.5rem;
   height: 3.5rem;
   font-size: 2rem;

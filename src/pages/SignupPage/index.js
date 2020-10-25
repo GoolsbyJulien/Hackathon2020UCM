@@ -10,7 +10,7 @@ class SignupPage extends React.Component {
     super(props);
 
     this.state = {
-      username: '',
+      email: '',
       password: '',
       confPassword: '',
       consumerChecked: false,
@@ -18,8 +18,8 @@ class SignupPage extends React.Component {
     };
   }
 
-  updateUsername = (username) => {
-    this.setState({ username });
+  updateEmail = (email) => {
+    this.setState({ email });
   }
 
   updatePassword = (password) => {
@@ -33,15 +33,14 @@ class SignupPage extends React.Component {
   signUp = (e) => {
     e.preventDefault();
 
-    const { username, password, confPassword, businessChecked, consumerChecked } = this.state;
+    const { email, password, confPassword, businessChecked, consumerChecked } = this.state;
 
-    if (username === '' || password === '' || confPassword === '' ||
-      (!businessChecked && !consumerChecked)) alert('Error: All of the fields are required.');
-    else if (password !== confPassword) alert('Error: The password and confirm password fields do not match.');
+    if (password !== confPassword) alert('Error: The password and confirm password fields do not match.');
     else {
       if (this.state.businessChecked) history.push('/signup/business');
       else {
         // sign up
+        this.props.setStateApp({ email: email, password: password, isConsumer: consumerChecked, signedIn: true });
         history.push('/');
       }
     }
@@ -57,22 +56,22 @@ class SignupPage extends React.Component {
 
   render() {
     return (
-      <div className='SignupPage'>
-        <SearchBar value={this.state.username} sendValue={this.updateUsername} placeholder='Username' />
-        <SearchBar isPassword={true} value={this.state.password} sendValue={this.updatePassword} placeholder='Password' />
-        <SearchBar isPassword={true} value={this.state.confPassword} sendValue={this.updateConfPassword} placeholder='Confirm Password' />
+      <form className='SignupPage' onSubmit={this.signUp}>
+        <SearchBar required={true} isEmail={true} value={this.state.email} sendValue={this.updateEmail} placeholder='Email' />
+        <SearchBar required={true} isPassword={true} value={this.state.password} sendValue={this.updatePassword} placeholder='Password' />
+        <SearchBar required={true} isPassword={true} value={this.state.confPassword} sendValue={this.updateConfPassword} placeholder='Confirm Password' />
         <div className='SignupPageConBis'>
           <div className='SignupPageRadioContainer'>
-            <input onChange={this.selectConsumer} className='SignupPageRadio' id='consumerRadio' type='radio' name='conOrBis' value='consumer' checked={this.state.consumerChecked} />
+            <input onChange={this.selectConsumer} className='SignupPageRadio' id='consumerRadio' type='radio' name='conOrBis' value='consumer' checked={this.state.consumerChecked} required />
             <label className='SignupPageLabel' htmlFor='consumerRadio'>I am a consumer</label>
           </div>
           <div className='SignupPageRadioContainer'>
-            <input onChange={this.selectBusiness} className='SignupPageRadio' id='businessRadio' type='radio' name='conOrBis' value='business' checked={this.state.businessChecked} />
+            <input onChange={this.selectBusiness} className='SignupPageRadio' id='businessRadio' type='radio' name='conOrBis' value='business' checked={this.state.businessChecked} required />
             <label className='SignupPageLabel' htmlFor='businessRadio'>I am a business</label>
           </div>
         </div>
-        <button className="signupButton" onClick={this.signUp}>Sign Up</button>
-      </div>
+        <button className="signupButton">Sign Up</button>
+      </form>
     );
   }
 }

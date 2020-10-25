@@ -15,6 +15,7 @@ import './index.css';
 class HeaderLink extends React.Component {
   changePath = (e) => {
     e.preventDefault();
+    if (this.props.otherAction) this.props.otherAction();
     history.push(this.props.location);
   }
 

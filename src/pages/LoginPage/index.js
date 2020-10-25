@@ -10,13 +10,13 @@ class LoginPage extends React.Component {
     super(props);
 
     this.state = {
-        username: "",
+        email: "",
         password: "",
     };
   }
 
-  updateUsername = (username) => {
-    this.setState({ username })
+  updateEmail = (email) => {
+    this.setState({ email })
   }
 
   updatePassword = (password) => {
@@ -30,17 +30,18 @@ class LoginPage extends React.Component {
     //alert("incorrect password")
 
     //login stuff
-    alert("Username: " + this.state.username + " Password:" + this.state.password);
+    // alert("Email: " + this.state.email + " Password:" + this.state.password);
+    this.props.setStateApp({ signedIn: true, email: this.state.email, password: this.state.password, isConsumer: true });
     history.push('/');
   }
 
   render() {
     return (
-      <div className='loginPage'>
-        <SearchBar value={this.state.username} sendValue={this.updateUsername} placeholder='Username'/> 
-        <SearchBar value={this.state.password} sendValue={this.updatePassword} placeholder='Password' /> 
-        <button className ="loginButton" onClick={this.login}>Login</button>
-      </div>
+      <form className='loginPage' onSubmit={this.login}>
+        <SearchBar required={true} isEmail={true} value={this.state.email} sendValue={this.updateEmail} placeholder='Email'/> 
+        <SearchBar required={true} isPassword={true} value={this.state.password} sendValue={this.updatePassword} placeholder='Password' /> 
+        <button type='submit' className ="loginButton">Login</button>
+      </form>
     );
   }
 }
