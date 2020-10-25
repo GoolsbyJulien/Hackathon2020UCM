@@ -9,6 +9,8 @@ import Header from './components/Header';
 import history from './history';
 import AboutUSPage from './pages/AboutUSPage';
 import SignupPage from './pages/SignupPage';
+import BusinessSignUpPage from './pages/BusinessSignUpPage';
+import HelpPage from './pages/HelpWPage';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,6 +43,10 @@ class App extends React.Component {
             history.push('/');
           }} exact />
           <Route path='/aboutUS' component={AboutUSPage} exact />
+          <Route path='/help' component={HelpPage} exact />
+
+          <Route path='/signup/business' component={BusinessSignUpPage} exact />
+
           <Route path='/:id/view' component={BusinessDetailsPage} exact />
         </Router>
       </div>

@@ -17,3 +17,12 @@
 .HeaderLinkLogo {
   margin-right: auto;
 }
+
+.logoImage:hover{
+opacity: 79%; 
+}
+
+.logoImage{
+  width: 7rem;
+  height: 7rem;
+}
