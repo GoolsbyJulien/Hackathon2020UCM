@@ -6,20 +6,18 @@ import BusinessDetailsTab from '../index';
 
 import './index.css';
 
-export const homeTabName = 'Home';
-export const homeTabIcon = homeIcon;
+export const hoursTabName = 'Hours';
+export const hoursTabIcon = homeIcon;
 
-class HomeTab extends BusinessDetailsTab {
+class HoursTab extends BusinessDetailsTab {
   constructor(props) {
-    super(props, homeIcon, homeTabName);
+    super(props, hoursTabIcon, hoursTabName);
   }
 
   setDisplay = () => {
     const business = new Business(this.props.id, 'Home Depot');
-    return (business.getHomeTab()
-    
-    );
+    return (business.getHoursTab());
   }
 }
 
-export default HomeTab;
+export default HoursTab;

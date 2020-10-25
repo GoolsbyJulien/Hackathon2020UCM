@@ -9,6 +9,7 @@ import Header from './components/Header';
 import history from './history';
 import AboutUSPage from './pages/AboutUSPage';
 import SignupPage from './pages/SignupPage';
+import BusinessSignUpPage from './pages/BusinessSignUpPage';
 
 class App extends React.Component {
   render() {
@@ -21,6 +22,8 @@ class App extends React.Component {
           <Route path='/aboutUS' component={AboutUSPage} exact />
 
           <Route path='/signup' component={SignupPage} exact />
+          <Route path='/signup/business' component={BusinessSignUpPage} exact />
+
           <Route path='/:id/view' component={BusinessDetailsPage} exact />
         </Router>
       </div>

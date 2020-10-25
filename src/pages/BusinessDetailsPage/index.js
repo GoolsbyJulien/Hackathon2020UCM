@@ -1,7 +1,10 @@
 import React from 'react';
 
 import HomeTab from '../../components/BusinessDetailsTab/HomeTab';
+import HoursTab from '../../components/BusinessDetailsTab/HoursTab';
+
 import { homeTabName, homeTabIcon } from '../../components/BusinessDetailsTab/HomeTab';
+import { hoursTabName } from '../../components/BusinessDetailsTab/HoursTab';
 import PicturesTab from '../../components/BusinessDetailsTab/PicturesTab';
 import { picturesTabName, picturesTabIcon } from '../../components/BusinessDetailsTab/PicturesTab';
 import BusinessDetailsTabButton from '../../components/BusinessDetailsTabButton';
@@ -26,6 +29,12 @@ class BusinessDetailsPage extends React.Component {
         homeTab: {
           name: homeTabName,
           component: <HomeTab id={this.id} currTab={this.state.currTab} />,
+          logo: homeTabIcon,
+        },
+
+        hoursTab: {
+          name: hoursTabName,
+          component: <HoursTab id={this.id} currTab={this.state.currTab} />,
           logo: homeTabIcon,
         },
         picturesTab: {

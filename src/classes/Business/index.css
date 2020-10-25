@@ -42,3 +42,24 @@
 .BusinessDetailsTabHomeName {
   font-size: 3rem;
 }
+
+
+.atRiskSection{
+  display: inline-block;
+  align-content: flex-end;
+}
+
+.hoursTabHeader {
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+
+
+  vertical-align: top;
+  }
+.hoursHeader {
+color: white;
+text-decoration: underline;
+}
+
+

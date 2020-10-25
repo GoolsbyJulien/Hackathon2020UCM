@@ -44,6 +44,38 @@ class Business {
     );
   }
 
+
+  getHoursTab = () => {
+    return (
+
+      <div className={'BusinessDetailsTabHome'}>
+        <div className='BusinessDetailsTabHomeFirstRow'>
+          <div className='BusinessDetailsTabHomeLogo'>{this.logo}</div>
+          <div className='BusinessDetailsTabHomeName'>{this.name}</div>
+          <div className='BusinessDetailsTabHomeBookmark'>Bookmark</div>
+
+        </div>
+        {/* add more once we're reaching from the database */}
+        <div className="atRiskSection">
+          <h2 className="hoursHeader">
+            At risk only:
+        </h2>
+
+          {/*days of week hours go here*/}
+        </div>
+            <h1 className="hoursTabHeader">
+            Hours:
+           </h1>    
+           <div className="atRiskSection">
+          <h2 className="hoursHeader">
+            At risk only:
+        </h2>
+</div>
+
+
+      </div>
+    );
+  }
   getPicturesTab = () => {
     return (
       <div className='BusinessDetailsTabPicture'>
