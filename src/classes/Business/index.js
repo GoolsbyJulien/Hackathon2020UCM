@@ -17,6 +17,10 @@ class Business {
     this.address = address;
   }
 
+  getId = () => {
+    return this.id;
+  }
+
   setLogo = (logo) => {
     this.logo = logo;
   }
