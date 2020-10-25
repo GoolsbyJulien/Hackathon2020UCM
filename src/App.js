@@ -10,6 +10,7 @@ import history from './history';
 import AboutUSPage from './pages/AboutUSPage';
 import SignupPage from './pages/SignupPage';
 import BusinessSignUpPage from './pages/BusinessSignUpPage';
+import HelpPage from './pages/HelpPage';
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
           <Route path='/' component={HomePage} exact />
           <Route path='/login' component={LoginPage} exact />
           <Route path='/aboutUS' component={AboutUSPage} exact />
+          <Route path='/help' component={HelpPage} exact />
 
           <Route path='/signup' component={SignupPage} exact />
           <Route path='/signup/business' component={BusinessSignUpPage} exact />
