@@ -29,7 +29,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className='HomePage'>
-        <Title title='Welcome to COVID Info!' visible={this.state.searchValue.length < 1} />
+        <Title title='Welcome to the COVID-19 Guide!' visible={this.state.searchValue.length < 1} />
         <SearchBar
           value={this.state.searchValue}
           sendValue={this.sendSearchValue}

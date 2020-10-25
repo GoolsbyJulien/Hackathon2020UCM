@@ -15,15 +15,22 @@ class SearchBar extends React.Component {
     this.props.sendValue(e.target.value);
   }
 
+  determineType = () => {
+    if (this.props.isPassword) return 'password';
+    if (this.props.isEmail) return 'email';
+    return 'text';
+  }
+
   render() {
     return (
       <div className={`SearchBar SearchBar${this.props.placeholder.replace(' ', '')}`}>
         <input
-          type={this.props.isPassword ? 'password' : 'text'}
+          type={this.determineType()}
           className='SearchBarInput'
           value={this.props.value}
           onChange={this.onChange}
           placeholder={this.props.placeholder || ''}
+          required={this.props.required}
         />
       </div>
     );
