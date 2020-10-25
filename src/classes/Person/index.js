@@ -1,10 +1,4 @@
-
-import julienPicture from '../../images/julien.JPG';
-
 import React from 'react';
-
-import defaultLogos from '../../images/defaultlogo.png';
-import history from '../../history';
 
 import './index.css';
 
@@ -24,7 +18,7 @@ class Person {
 
     return (
       <div class="aboutUsCard">    
-      <img className="personImage" src={this.picture}>
+      <img className="personImage" src={this.picture} alt={this.name}>
       
        </img>
           <h1 className = "name"> {this.name} </h1>

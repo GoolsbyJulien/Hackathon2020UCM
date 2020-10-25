@@ -1,11 +1,8 @@
 import React from 'react';
 
-import LoginField from '../../components/Login/Username';
-import Title from '../../components/Title';
-import Business from '../../classes/Business';
-
 import SearchBar from '../../components/SearchBar';
 import history from '../../history';
+import { signIn } from '../../functions/server';
 
 import './index.css';
 
@@ -18,24 +15,6 @@ class LoginPage extends React.Component {
         password: "",
     };
 
-    this.updateUsername = this.updateUsername.bind(this);
-    this.updatePassword = this.updatePassword.bind(this);
-    this.login = this.login.bind(this);
-
-  }
-
-  updateUsername(e) {
-    this.setState({username: e.target.value})
-
-  }
-
-  updatePassword(e) {
-    this.setState({password : e.target.value})
-  }
-
-
-  login(e) {
-    
   }
 
   updateEmail = (email) => {
@@ -47,14 +26,12 @@ class LoginPage extends React.Component {
   }
 
 
-  login = (e) => {
+  login = async (e) => {
     e.preventDefault();
-    //if incorrect password
-    //alert("incorrect password")
 
     //login stuff
     // alert("Email: " + this.state.email + " Password:" + this.state.password);
-    this.props.setStateApp({ signedIn: true, email: this.state.email, password: this.state.password, isConsumer: true });
+    this.props.setStateApp({ signedIn: true, id: 222, email: this.state.email, isConsumer: false });
     history.push('/');
   }
 

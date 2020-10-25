@@ -1,9 +1,5 @@
 import React from 'react';
 
-import SearchBar from '../../components/SearchBar';
-import Title from '../../components/Title';
-import Business from '../../classes/Business';
-
 import './index.css';
 import Person from '../../classes/Person';
 import boPicture from '../../images/bo.JPG';
@@ -14,10 +10,6 @@ import jeremiahPicture from '../../images/jeremiah.jpg'
 
 import julienPicture from '../../images/julien.JPG';
 class AboutUSPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
   build = () => {
     // do stuff based off searchValue
     const results = [new Person('Julien Goolsby', 'I am a freshman studying Computer Science. During high school I was an intern at Cerner through the north land caps program  ', julienPicture), 

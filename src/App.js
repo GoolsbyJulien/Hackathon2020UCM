@@ -17,8 +17,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      id: -1,
       email: '',
-      password: '',
       isConsumer: false,
       signedIn: false,
     };
@@ -33,7 +33,7 @@ class App extends React.Component {
       <div className='App'>
         <Router history={history}>
           <Header email={this.state.email} signedIn={this.state.signedIn} setStateApp={this.setStateApp} />
-          <Route path='/' component={HomePage} exact />
+          <Route path='/' render={() => this.state.signedIn && !this.state.isConsumer ? <BusinessDetailsPage id={this.state.id} setStateApp={this.setStateApp} signedIn={this.state.signedIn} isBusiness={true} /> : <HomePage />} exact />
           <Route path='/login' render={() => {
             if (!this.state.signedIn) return <LoginPage setStateApp={this.setStateApp} />
             history.push('/');
@@ -43,11 +43,12 @@ class App extends React.Component {
             history.push('/');
           }} exact />
           <Route path='/aboutUS' component={AboutUSPage} exact />
+          <Route path='/:id/view' render={(info) => {
+            if (this.state.signedIn && !this.state.isConsumer) history.push('/');
+            else return <BusinessDetailsPage match={info.match} signedIn={this.state.signedIn} />
+          }} exact />
           <Route path='/help' component={HelpPage} exact />
-
           <Route path='/signup/business' component={BusinessSignUpPage} exact />
-
-          <Route path='/:id/view' component={BusinessDetailsPage} exact />
         </Router>
       </div>
     );

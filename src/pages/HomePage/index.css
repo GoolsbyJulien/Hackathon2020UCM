@@ -12,3 +12,7 @@
   align-items: center;
   margin-top: 3rem;
 }
+
+.SearchMessage {
+  color: rgb(235, 235, 235);
+}

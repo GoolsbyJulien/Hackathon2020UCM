@@ -33,7 +33,7 @@ class SignupPage extends React.Component {
   signUp = (e) => {
     e.preventDefault();
 
-    const { email, password, confPassword, businessChecked, consumerChecked } = this.state;
+    const { email, password, confPassword, consumerChecked } = this.state;
 
     if (password !== confPassword) alert('Error: The password and confirm password fields do not match.');
     else {

@@ -1,6 +1,5 @@
 // import React from 'react';
 
-import Business from '../../../classes/Business';
 import pictureIcon from '../../../images/pictures.png';
 import BusinessDetailsTab from '..';
 
@@ -15,8 +14,7 @@ class PicturesTab extends BusinessDetailsTab {
   }
 
   setDisplay = () => {
-    const business = new Business(this.props.id, 'Home Depot');
-    return business.getPicturesTab();
+    return this.props.business.getPicturesTab();
   }
 }
 

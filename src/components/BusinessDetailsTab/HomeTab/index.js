@@ -1,6 +1,5 @@
 // import React from 'react';
 
-import Business from '../../../classes/Business';
 import homeIcon from '../../../images/homeicon.svg';
 import BusinessDetailsTab from '../index';
 
@@ -15,8 +14,8 @@ class HomeTab extends BusinessDetailsTab {
   }
 
   setDisplay = () => {
-    const business = new Business(this.props.id, 'Home Depot');
-    return business.getHomeTab();
+    if (this.props.edit) return this.props.business.editHomeTab(this.props.newBusiness, this.props.sendInfo);
+    else return this.props.business.getHomeTab(this.props.signedIn);
   }
 }
 
