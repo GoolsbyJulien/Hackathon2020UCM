@@ -9,6 +9,8 @@ import Header from './components/Header';
 import history from './history';
 import AboutUSPage from './pages/AboutUSPage';
 import SignupPage from './pages/SignupPage';
+import BusinessSignUpPage from './pages/BusinessSignUpPage';
+import HelpPage from './pages/HelpPage';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,6 +47,8 @@ class App extends React.Component {
             if (this.state.signedIn && !this.state.isConsumer) history.push('/');
             else return <BusinessDetailsPage match={info.match} signedIn={this.state.signedIn} />
           }} exact />
+          <Route path='/help' component={HelpPage} exact />
+          <Route path='/signup/business' component={BusinessSignUpPage} exact />
         </Router>
       </div>
     );

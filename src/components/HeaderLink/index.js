@@ -2,7 +2,11 @@ import React from 'react';
 
 import history from '../../history';
 
+import logo from '../../images/logo.png'
+
+
 import './index.css';
+
 
 /**
  * Props:
@@ -19,13 +23,28 @@ class HeaderLink extends React.Component {
     history.push(this.props.location);
   }
 
+  generateHeaderItem = () => {
+
+    if (this.props.name != "Logo")
+      return (this.props.representative || <div className='HeaderLinkText'>{this.props.name}</div>);
+
+    else
+      return (<img className="logoImage" src={logo}></img>);
+
+  }
+
+
+
   render() {
     return (
       <div
         className={'HeaderLink HeaderLink' + this.props.name.replace(' ', '')}
-        onClick={this.changePath} disabled={!this.props.clickable || false}
-      >
-        {this.props.representative || <div className='HeaderLinkText'>{this.props.name}</div>}
+        onClick={this.changePath} disabled={!this.props.clickable || false}>
+
+
+        {this.generateHeaderItem()}
+
+
       </div>
     );
   }
