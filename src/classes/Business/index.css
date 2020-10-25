@@ -4,7 +4,7 @@
   background-color: rgb(58, 204, 172);
   color: rgb(238, 230, 230);
   font-size: 1.4rem;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   padding: 0 5px 5px 5px;
   align-items: center;
@@ -32,6 +32,13 @@
   border-radius: 8px;
 }
 
+.BusinessDetailsTabHome {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+
 .BusinessDetailsTabHomeFirstRow {
   display: flex;
   justify-content: space-between;
@@ -41,4 +48,64 @@
 
 .BusinessDetailsTabHomeName {
   font-size: 3rem;
+}
+
+.BusinessDetailsTabHomeSpace, .BusinessDetailsTabHomeBookmark {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.BusinessDetailsTabHomeBookmark {
+  border: 2px solid rgb(80, 224, 169);
+  border-radius: 5px;
+}
+
+.BusinessDetailsTabHomeBookmark:hover {
+  cursor: pointer;
+  background-color: rgb(80, 224, 169);
+}
+
+.BookmarkImage {
+  width: 100%;
+  height: 100%;
+}
+
+.BusinessDetailsTabHomeAddress {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(240, 240, 240);
+}
+
+.BusinessDetailsTabCovid {
+  list-style: none;
+  list-style-type: none;
+}
+
+.BusinessDetailsTabCovid > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.EditBusinessInput {
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  border: none;
+  box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.164);
+  margin-bottom: 2rem;
+  transition: all .3s;
+  padding: 0 3px 0 3px;
+}
+
+.EditBusinessInput:hover {
+  outline: none;
+  box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.308);
+}
+
+.BusinessDetailsTabCovid > li > input {
+  width: 80%;
 }
