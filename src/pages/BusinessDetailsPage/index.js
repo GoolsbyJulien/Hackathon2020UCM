@@ -9,7 +9,7 @@ import { homeTabName, homeTabIcon } from '../../components/BusinessDetailsTab/Ho
 import CovidTab from '../../components/BusinessDetailsTab/CovidTab';
 import { covidTabName, covidTabIcon } from '../../components/BusinessDetailsTab/CovidTab';
 import BusinessDetailsTabButton from '../../components/BusinessDetailsTabButton';
-import { getBusinessById, getBusinesses } from '../../functions/server';
+import { getBusinessById, getBusinesses, updateBusiness } from '../../functions/server';
 import history from '../../history';
 import Business from '../../classes/Business';
 
@@ -145,8 +145,9 @@ class BusinessDetailsPage extends React.Component {
   }
 
   saveInfo = () => {
-    this.setState({ message: 'Loading...' }, () => {
-      
+    this.setState({ message: 'Loading...' }, async () => {
+      const response = await updateBusiness(this.state.newBusiness);
+      console.log(response);
     });
   }
 
