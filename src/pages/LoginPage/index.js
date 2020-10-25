@@ -1,5 +1,9 @@
 import React from 'react';
 
+import LoginField from '../../components/Login/Username';
+import Title from '../../components/Title';
+import Business from '../../classes/Business';
+
 import SearchBar from '../../components/SearchBar';
 import history from '../../history';
 
@@ -13,6 +17,25 @@ class LoginPage extends React.Component {
         email: "",
         password: "",
     };
+
+    this.updateUsername = this.updateUsername.bind(this);
+    this.updatePassword = this.updatePassword.bind(this);
+    this.login = this.login.bind(this);
+
+  }
+
+  updateUsername(e) {
+    this.setState({username: e.target.value})
+
+  }
+
+  updatePassword(e) {
+    this.setState({password : e.target.value})
+  }
+
+
+  login(e) {
+    
   }
 
   updateEmail = (email) => {

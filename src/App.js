@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage"
 import BusinessDetailsPage from './pages/BusinessDetailsPage';
 import Header from './components/Header';
 import history from './history';
+import AboutUSPage from './pages/AboutUSPage';
 import SignupPage from './pages/SignupPage';
 
 class App extends React.Component {
@@ -39,6 +40,7 @@ class App extends React.Component {
             if (!this.state.signedIn) return <SignupPage setStateApp={this.setStateApp} />;
             history.push('/');
           }} exact />
+          <Route path='/aboutUS' component={AboutUSPage} exact />
           <Route path='/:id/view' component={BusinessDetailsPage} exact />
         </Router>
       </div>
