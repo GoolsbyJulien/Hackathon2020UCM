@@ -109,3 +109,14 @@
 .BusinessDetailsTabCovid > li > input {
   width: 80%;
 }
+.covidRulesHeader{
+ color:white;
+ align-self: center; 
+}.covidRules{
+  display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    color:white;
+}

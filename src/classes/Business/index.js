@@ -139,10 +139,15 @@ class Business {
   }
 
   getCovidTab = () => {
-    return (
+    return ( 
+
+      <div className ="covidRules">
+      <h1 className ="covidRulesHeader">Covid Rules</h1>
       <ul className='BusinessDetailsTabCovid'>
         {this.covid.map((rule, index) => <li className='TabCovidRule' key={index}>{rule}</li>)}
       </ul>
+
+      </div>
     );
   }
 

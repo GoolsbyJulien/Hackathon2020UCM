@@ -30,8 +30,7 @@ class HelpPage extends React.Component {
 
         <div className="helpBox">
           <h2>How to use:</h2>
-
-
+ 
           <p> On the <Link to="/">homepage</Link> search for a business and select the business you would like to view from the list. Clicking on a business will bring you to the business details page where you will be able to see Covid-19 rules, Operation Hours, and more. The subscribe button will ensure that if a change is made you will receive an email notification. If you do not have an account you can create one on the <Link to="/signup"> Signup page.</Link></p>
         </div>
 
