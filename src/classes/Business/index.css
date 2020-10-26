@@ -1,3 +1,19 @@
+.EditBusinessInput {
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  border: none;
+  box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.164);
+  margin-bottom: 2rem;
+  transition: all .3s;
+  padding: 0 3px 0 3px;
+}
+
+.EditBusinessInput:hover {
+  outline: none;
+  box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.308);
+}
+
 .SearchResult {
   width: 75%;
   border-radius: 10px;
@@ -46,6 +62,12 @@
   color: rgb(247, 244, 244);
 }
 
+.BusinessDetailsTabHomeSecondRowInput {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
 .BusinessDetailsTabHomeName {
   font-size: 3rem;
 }
@@ -70,6 +92,10 @@
   height: 100%;
 }
 
+.BusinessDetailsTabHomeNameInput {
+  align-self: stretch;
+}
+
 .BusinessDetailsTabHomeAddress {
   flex-grow: 1;
   display: flex;
@@ -77,6 +103,18 @@
   justify-content: center;
   align-items: center;
   color: rgb(240, 240, 240);
+}
+
+.AddressLine1Input {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+}
+
+.AddressLine2Input {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
 }
 
 .BusinessDetailsTabCovid {
@@ -90,20 +128,12 @@
   align-items: center;
 }
 
-.EditBusinessInput {
-  height: 3rem;
-  border-radius: 10px;
-  font-size: 1.6rem;
-  border: none;
-  box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.164);
-  margin-bottom: 2rem;
-  transition: all .3s;
-  padding: 0 3px 0 3px;
+input {
+  width: 100%;
 }
 
-.EditBusinessInput:hover {
-  outline: none;
-  box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.308);
+.MarginRight {
+  margin-right: 5px;
 }
 
 .BusinessDetailsTabCovid > li > input {

@@ -2,6 +2,7 @@ import React from 'react';
 
 import SearchBar from '../../components/SearchBar';
 import history from '../../history';
+import { signUp } from '../../functions/server';
 
 import './index.css';
 
@@ -30,17 +31,18 @@ class SignupPage extends React.Component {
     this.setState({ confPassword });
   }
 
-  signUp = (e) => {
+  signUp = async (e) => {
     e.preventDefault();
 
     const { email, password, confPassword, consumerChecked } = this.state;
 
     if (password !== confPassword) alert('Error: The password and confirm password fields do not match.');
     else {
-      if (this.state.businessChecked) history.push('/signup/business');
-      else {
-        // sign up
-        this.props.setStateApp({ email: email, password: password, isConsumer: consumerChecked, signedIn: true });
+      const response = await signUp(email, password, consumerChecked);
+      if (!response.data) {
+        alert('There was an error in making your account, most likely because the email is already in use.');
+      } else {
+        this.props.setStateApp({ email: email, password: password, isConsumer: consumerChecked, signedIn: true, id: response.data.id });
         history.push('/');
       }
     }

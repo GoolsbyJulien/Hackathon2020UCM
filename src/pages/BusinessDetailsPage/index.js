@@ -9,7 +9,7 @@ import { homeTabName, homeTabIcon } from '../../components/BusinessDetailsTab/Ho
 import CovidTab from '../../components/BusinessDetailsTab/CovidTab';
 import { covidTabName, covidTabIcon } from '../../components/BusinessDetailsTab/CovidTab';
 import BusinessDetailsTabButton from '../../components/BusinessDetailsTabButton';
-import { getBusinessById, getBusinesses, updateBusiness } from '../../functions/server';
+import { getBusinessById, getBusinesses, updateBusiness, getAccounts, createBusiness } from '../../functions/server';
 import history from '../../history';
 import Business from '../../classes/Business';
 
@@ -28,13 +28,13 @@ class BusinessDetailsPage extends React.Component {
       sendInfo: null,
       newBusiness: null,
       message: 'Save',
+      isNew: false,
     };
   }
 
   updateBusiness = async () => {
     if (!this.props.isBusiness) {
       const response = await getBusinessById(this.id);
-      console.log(response);
       if (response.data === null) history.push('/');
       else this.setState({
         business: new Business(
@@ -48,11 +48,37 @@ class BusinessDetailsPage extends React.Component {
       });
     } else {
       const response = await getBusinesses();
-      const business = response.data.find(business => business.account.id === this.id);
+      const business = response.data.find(business => business.accountOwnerId === this.id);
       if (!business) {
-        this.props.setStateApp({ signedIn: false });
-      }
-      else {
+        const accounts = await getAccounts();
+        const userAccount = accounts.data.find(account => account.id === this.id);
+        if (!userAccount) {
+          this.props.setStateApp({ signedIn: false });
+        }
+        else {
+          this.setState({
+            isNew: true,
+            business: new Business(
+              this.id,
+              'New Business',
+              [],
+              [],
+              [],
+              { streetAddress: '', city: '', state: '', zip: '', },
+            ),
+            newBusiness: {
+              id: this.id,
+              name: 'New Business',
+              covid: [''],
+              streetAddress: '',
+              city: '',
+              state: '',
+              zip: '',
+            },
+          });
+        }
+      } else {
+        const address = business.address ? business.address : { streetAddress: '', city: '', state: '', zip: '' };
         this.setState({
           business: new Business(
             business.id,
@@ -65,11 +91,11 @@ class BusinessDetailsPage extends React.Component {
           newBusiness: {
             id: business.id,
             name: business.name,
-            covid: business.covidRules,
-            streetAddress: business.address.streetAddress,
-            city: business.address.city,
-            state: business.address.state,
-            zip: business.address.zip,
+            covid: [...business.covidRules, ''],
+            streetAddress: address.streetAddress,
+            city: address.city,
+            state: address.state,
+            zip: address.zip,
           },
         });
       }
@@ -145,9 +171,16 @@ class BusinessDetailsPage extends React.Component {
   }
 
   saveInfo = () => {
-    this.setState({ message: 'Loading...' }, async () => {
-      const response = await updateBusiness(this.state.newBusiness);
-      console.log(response);
+    this.setState({ message: 'Loading...', newBusiness: {
+      ...this.state.newBusiness,
+      covid: this.state.newBusiness.covid.filter(rule => rule !== ''),
+    } }, async () => {
+      if (!this.state.isNew) await updateBusiness(this.state.newBusiness);
+      else {
+        await createBusiness(this.state.newBusiness);
+        await this.updateBusiness();
+      }
+      this.setState({ message: 'Saved', isNew: false, });
     });
   }
 
@@ -170,7 +203,7 @@ class BusinessDetailsPage extends React.Component {
               else return false;
             })}
             <div className='BusinessDetailsPageTabButtonsSpace' />
-            {this.props.signedIn ? <div className='BusinessDetailsPageSubscribe'><div>Subscribe</div></div> : null}
+            {/* {this.props.signedIn ? <div className='BusinessDetailsPageSubscribe'><div>Subscribe</div></div> : null} */}
           </div>
         </div>
       );

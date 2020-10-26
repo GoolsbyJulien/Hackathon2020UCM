@@ -16,6 +16,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.setStateApp = this.setStateApp.bind(this);
+
     this.state = {
       id: -1,
       email: '',
@@ -24,8 +26,9 @@ class App extends React.Component {
     };
   }
 
-  setStateApp = (newState) => {
-    this.setState(newState);
+  setStateApp() {
+    if (arguments.length === 1) this.setState(arguments[0]);
+    else this.setState(arguments[0], arguments[1]);
   }
 
   render() {
@@ -33,7 +36,7 @@ class App extends React.Component {
       <div className='App'>
         <Router history={history}>
           <Header email={this.state.email} signedIn={this.state.signedIn} setStateApp={this.setStateApp} />
-          <Route path='/' render={() => this.state.signedIn && !this.state.isConsumer ? <BusinessDetailsPage id={this.state.id} setStateApp={this.setStateApp} signedIn={this.state.signedIn} isBusiness={true} /> : <HomePage />} exact />
+          <Route path='/' render={() => (this.state.signedIn && !this.state.isConsumer) ? <BusinessDetailsPage id={this.state.id} setStateApp={this.setStateApp} signedIn={this.state.signedIn} isBusiness={true} /> : <HomePage />} exact />
           <Route path='/login' render={() => {
             if (!this.state.signedIn) return <LoginPage setStateApp={this.setStateApp} />
             history.push('/');
@@ -48,7 +51,7 @@ class App extends React.Component {
             else return <BusinessDetailsPage match={info.match} signedIn={this.state.signedIn} />
           }} exact />
           <Route path='/help' component={HelpPage} exact />
-          <Route path='/signup/business' component={BusinessSignUpPage} exact />
+          {/* <Route path='/signup/business' component={BusinessSignUpPage} exact /> */}
         </Router>
       </div>
     );

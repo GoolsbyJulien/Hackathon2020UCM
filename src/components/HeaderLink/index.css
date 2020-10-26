@@ -25,4 +25,5 @@ opacity: 79%;
 .logoImage{
   width: 7rem;
   height: 7rem;
+  z-index: 2;
 }
