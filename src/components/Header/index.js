@@ -23,7 +23,7 @@ class Header extends React.Component {
         {this.props.signedIn
           ? null
           : <HeaderLink name='Sign Up' location='/signup' />}
-        <HeaderLink name='Settings' location='/settings' />
+        {/* <HeaderLink name='Settings' location='/settings' /> */}
         <HeaderLink name='Help' location='/help' />
         <HeaderLink name='About us' location='/aboutus' />
         {this.props.signedIn ? <HeaderLink name={this.props.email} location='/bookmarked' /> : null}

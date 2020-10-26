@@ -25,11 +25,11 @@ class HeaderLink extends React.Component {
 
   generateHeaderItem = () => {
 
-    if (this.props.name != "Logo")
+    if (this.props.name !== "Logo")
       return (this.props.representative || <div className='HeaderLinkText'>{this.props.name}</div>);
 
     else
-      return (<img className="logoImage" src={logo}></img>);
+      return (<img className="logoImage" src={logo} alt='Covid Guide Book'></img>);
 
   }
 

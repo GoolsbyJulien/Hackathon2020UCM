@@ -13,37 +13,85 @@ export const getBusinessById = async (id) => {
 }
 
 export const signIn = async (email, password) => {
-  const response = await axios.post('http://localhost:8080/api/account/', {
+  const validCred = await axios.get('http://localhost:8080/api/account/validate', {
     params: {
       email,
-      password,
+      hash: password,
+    },
+  });
+  if (validCred) {
+    const account = await axios.get('http://localhost:8080/api/account/findByEmail', {
+      params: {
+        email,
+      },
+    });
+    return account;
+  } else {
+    return null;
+  }
+}
+
+export const updateBusiness = async (business) => {
+  const response = await axios.put('http://localhost:8080/api/business/', {
+    businessId: business.id,
+    maxOccupancy: 1000,
+    name: business.name,
+    atRiskPopulationBusinessHours: '',
+    imageFilesList: '',
+    hoursOfOperation: [],
+    covidRules: business.covid,
+    address: {
+      streetAddress: business.streetAddress,
+      city: business.city,
+      state: business.state,
+      zip: business.zip,
     }
   });
   return response;
 }
 
-export const updateBusiness = async (business) => {
-  const response = await axios.put('http://localhost:8080/api/business/update/', {
-    body: {
-      business: {
-        id: business.id,
-        name: business.name,
-        imageFilesList: business.pictures,
-        hoursOfOperation: business.hours,
-        covidRules: business.covid,
-        address: {
-          streetAddress: business.streetAddress,
-          city: business.city,
-          state: business.state,
-          zip: business.zip,
-        },
-      },
-      id: business.id,
-    },
-  }, {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+export const createBusiness = async (business) => {
+  await axios.post('http://localhost:8080/api/business/', {
+    accountOwnerid: business.id,
+    name: business.name,
+    maxOccupancy: 50,
+    covidRules: business.covid,
+    atRiskPopulationBusinessHours: '',
+    hoursOfOperation: [],
+    imageFilesList: '',
+    address: {
+      streetAddress: business.streetAddress,
+      city: business.city,
+      state: business.state,
+      zip: business.zip,
     }
   });
-  return response;
+}
+
+export const signUp = async (email, password, isConsumer) => {
+  const duplicateAccount = await axios.get('http://localhost:8080/api/account/findByEmail', {
+    params: {
+      email,
+    },
+  });
+  if (!duplicateAccount.data) {
+    await axios.post('http://localhost:8080/api/account/', {
+      email,
+      password,
+      userType: isConsumer ? 'USER' : 'BUSINESS',
+    });
+    const account = await axios.get('http://localhost:8080/api/account/findByEmail', {
+      params: {
+        email,
+      },
+    });
+    return account;
+  } else {
+    return { data: null };
+  }
+}
+
+export const getAccounts = async () => {
+  const accounts = await axios.get('http://localhost:8080/api/account/');
+  return accounts;
 }

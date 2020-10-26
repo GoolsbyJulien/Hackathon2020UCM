@@ -70,27 +70,26 @@ class Business {
         </div>
         <div className='BusinessDetailsTabHomeAddress'>
           <div className='AddressLine1'>{this.address.streetAddress}</div>
-          <div className='AddressLine2'>{this.address.city}, {this.address.state} {this.address.zip}</div>
+          <div className='AddressLine2'>{this.address.city}, {this.address.state} {this.address.zip === 0 ? '' : this.address.zip}</div>
         </div>
       </div>
     );
   }
 
   editHomeTab = (state, setState) => {
-    console.log(state);
     return (
       <div className={'BusinessDetailsTabHome'}>
         <div className='BusinessDetailsTabHomeFirstRow'>
           {/* <div className='BusinessDetailsTabHomeLogo'>{this.logo}</div> */}
-          <input type='text' value={state.name} onChange={(e) => { setState({ ...state, name: e.target.value }); }} className='BusinessDetailsTabHomeName'></input>
-          <div className='BusinessDetailsTabHomeSpace'></div>
+          <input placeholder='Business Name' type='text' value={state.name} onChange={(e) => { setState({ ...state, name: e.target.value }); }} className='BusinessDetailsTabHomeNameInput EditBusinessInput'></input>
+          {/* <div className='BusinessDetailsTabHomeSpace'></div> */}
         </div>
         <div className='BusinessDetailsTabHomeAddress'>
-          <div className='AddressLine1'><input type='text' value={state.streetAddress} onChange={(e) => { setState({ ...state, streetAddress: e.target.value }); }} /></div>
-          <div className='AddressLine2'>
-            <input type='text' value={state.city} onChange={(e) => { setState({ ...state, city: e.target.value }); }} />
-            <input type='text' value={state.state} onChange={(e) => { setState({ ...state, state: e.target.value }); }} />
-            <input type='text' value={state.zip} onChange={(e) => { setState({ ...state, name: e.target.value }); }} />
+          <div className='AddressLine1Input'><input placeholder='Street Address' type='text' className='EditBusinessInput' value={state.streetAddress} onChange={(e) => { setState({ ...state, streetAddress: e.target.value }); }} /></div>
+          <div className='AddressLine2Input'>
+            <input placeholder='City' className='EditBusinessInput MarginRight' type='text' value={state.city} onChange={(e) => { setState({ ...state, city: e.target.value }); }} />
+            <input placeholder='State' className='EditBusinessInput MarginRight' type='text' value={state.state} onChange={(e) => { setState({ ...state, state: e.target.value }); }} />
+            <input placeholder='Zip Code' className='EditBusinessInput' type='number' value={state.zip} onChange={(e) => { setState({ ...state, zip: e.target.value }); }} />
           </div>
         </div>
       </div>

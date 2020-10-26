@@ -11,8 +11,8 @@ class LoginPage extends React.Component {
     super(props);
 
     this.state = {
-        email: "",
-        password: "",
+      email: "",
+      password: "",
     };
 
   }
@@ -29,18 +29,22 @@ class LoginPage extends React.Component {
   login = async (e) => {
     e.preventDefault();
 
-    //login stuff
-    // alert("Email: " + this.state.email + " Password:" + this.state.password);
-    this.props.setStateApp({ signedIn: true, id: 222, email: this.state.email, isConsumer: false });
-    history.push('/');
+    const account = await signIn(this.state.email, this.state.password);
+    if (account.data) {
+      this.props.setStateApp({ signedIn: true, id: account.data.id, email: this.state.email, isConsumer: account.data.type === 'USER' }, () => {
+        history.push('/');
+      });
+    } else {
+      alert('Incorrect username or password');
+    }
   }
 
   render() {
     return (
       <form className='loginPage' onSubmit={this.login}>
-        <SearchBar required={true} isEmail={true} value={this.state.email} sendValue={this.updateEmail} placeholder='Email'/> 
-        <SearchBar required={true} isPassword={true} value={this.state.password} sendValue={this.updatePassword} placeholder='Password' /> 
-        <button type='submit' className ="loginButton">Login</button>
+        <SearchBar required={true} isEmail={true} value={this.state.email} sendValue={this.updateEmail} placeholder='Email' />
+        <SearchBar required={true} isPassword={true} value={this.state.password} sendValue={this.updatePassword} placeholder='Password' />
+        <button type='submit' className="loginButton">Login</button>
       </form>
     );
   }

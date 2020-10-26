@@ -26,6 +26,8 @@ class SearchBar extends React.Component {
       <div className={`SearchBar SearchBar${this.props.placeholder.replace(' ', '')}`}>
         <input
           type={this.determineType()}
+          minLength={this.props.isPassword ? 8 : 0}
+          maxLength={this.props.isPassword ? 30 : 100}
           className='SearchBarInput'
           value={this.props.value}
           onChange={this.onChange}
