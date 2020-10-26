@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Code-A-Thon-2020-Client/static/css/main.ca0075bf.chunk.css",
-    "main.js": "/Code-A-Thon-2020-Client/static/js/main.1fa0d26c.chunk.js",
-    "main.js.map": "/Code-A-Thon-2020-Client/static/js/main.1fa0d26c.chunk.js.map",
-    "runtime-main.js": "/Code-A-Thon-2020-Client/static/js/runtime-main.c803e0d7.js",
-    "runtime-main.js.map": "/Code-A-Thon-2020-Client/static/js/runtime-main.c803e0d7.js.map",
-    "static/js/2.91a7ed86.chunk.js": "/Code-A-Thon-2020-Client/static/js/2.91a7ed86.chunk.js",
-    "static/js/2.91a7ed86.chunk.js.map": "/Code-A-Thon-2020-Client/static/js/2.91a7ed86.chunk.js.map",
-    "index.html": "/Code-A-Thon-2020-Client/index.html",
-    "static/css/main.ca0075bf.chunk.css.map": "/Code-A-Thon-2020-Client/static/css/main.ca0075bf.chunk.css.map",
-    "static/js/2.91a7ed86.chunk.js.LICENSE.txt": "/Code-A-Thon-2020-Client/static/js/2.91a7ed86.chunk.js.LICENSE.txt",
-    "static/media/bo.4dd6588a.JPG": "/Code-A-Thon-2020-Client/static/media/bo.4dd6588a.JPG",
-    "static/media/homeicon.78c6e013.svg": "/Code-A-Thon-2020-Client/static/media/homeicon.78c6e013.svg",
-    "static/media/jared.a8d9e6b6.png": "/Code-A-Thon-2020-Client/static/media/jared.a8d9e6b6.png",
-    "static/media/jeremiah.34e0a0cc.jpg": "/Code-A-Thon-2020-Client/static/media/jeremiah.34e0a0cc.jpg",
-    "static/media/julien.c28a106c.JPG": "/Code-A-Thon-2020-Client/static/media/julien.c28a106c.JPG",
-    "static/media/logo.68172843.png": "/Code-A-Thon-2020-Client/static/media/logo.68172843.png",
-    "static/media/nate.88743af6.jpg": "/Code-A-Thon-2020-Client/static/media/nate.88743af6.jpg"
+    "main.css": "/Hackathon2020UCM/static/css/main.d945b70e.chunk.css",
+    "main.js": "/Hackathon2020UCM/static/js/main.1a24f27b.chunk.js",
+    "main.js.map": "/Hackathon2020UCM/static/js/main.1a24f27b.chunk.js.map",
+    "runtime-main.js": "/Hackathon2020UCM/static/js/runtime-main.1a587699.js",
+    "runtime-main.js.map": "/Hackathon2020UCM/static/js/runtime-main.1a587699.js.map",
+    "static/js/2.91a7ed86.chunk.js": "/Hackathon2020UCM/static/js/2.91a7ed86.chunk.js",
+    "static/js/2.91a7ed86.chunk.js.map": "/Hackathon2020UCM/static/js/2.91a7ed86.chunk.js.map",
+    "index.html": "/Hackathon2020UCM/index.html",
+    "static/css/main.d945b70e.chunk.css.map": "/Hackathon2020UCM/static/css/main.d945b70e.chunk.css.map",
+    "static/js/2.91a7ed86.chunk.js.LICENSE.txt": "/Hackathon2020UCM/static/js/2.91a7ed86.chunk.js.LICENSE.txt",
+    "static/media/bo.4dd6588a.JPG": "/Hackathon2020UCM/static/media/bo.4dd6588a.JPG",
+    "static/media/homeicon.78c6e013.svg": "/Hackathon2020UCM/static/media/homeicon.78c6e013.svg",
+    "static/media/jared.a8d9e6b6.png": "/Hackathon2020UCM/static/media/jared.a8d9e6b6.png",
+    "static/media/jeremiah.34e0a0cc.jpg": "/Hackathon2020UCM/static/media/jeremiah.34e0a0cc.jpg",
+    "static/media/julien.c28a106c.JPG": "/Hackathon2020UCM/static/media/julien.c28a106c.JPG",
+    "static/media/logo.68172843.png": "/Hackathon2020UCM/static/media/logo.68172843.png",
+    "static/media/nate.88743af6.jpg": "/Hackathon2020UCM/static/media/nate.88743af6.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c803e0d7.js",
+    "static/js/runtime-main.1a587699.js",
     "static/js/2.91a7ed86.chunk.js",
-    "static/css/main.ca0075bf.chunk.css",
-    "static/js/main.1fa0d26c.chunk.js"
+    "static/css/main.d945b70e.chunk.css",
+    "static/js/main.1a24f27b.chunk.js"
   ]
 }
